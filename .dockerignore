@@ -1,0 +1,11 @@
+.git
+**/.DS_Store
+**/node_modules
+**/__pycache__
+**/.pytest_cache
+frontend/dist
+backend/venv
+backend/.venv
+backend/data
+.env
+**/.env
