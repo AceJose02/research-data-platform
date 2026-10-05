@@ -1,2 +1,27 @@
-<div id="root"></div>
-<script type="module" src="/src/main.jsx"></script>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="Upload a CSV or Excel dataset to explore variables, compare groups, and export a PDF report." />
+    <title>Research Data Platform</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <script>
+      // Apply the saved theme before first paint to avoid a flash.
+      (function () {
+        var theme = "paper";
+        try {
+          theme = localStorage.getItem("rdp-theme") ||
+            (window.matchMedia("(prefers-color-scheme: dark)").matches ? "blueprint" : "paper");
+        } catch (e) {}
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>This app needs JavaScript to run.</noscript>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
